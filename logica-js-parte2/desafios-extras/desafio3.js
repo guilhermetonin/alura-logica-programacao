@@ -33,8 +33,8 @@ console.log(`U$ ${valor} com a cotação em R$ ${cotacao} é R$ ${reais}`);
 // 4.
 let b = 10.50
 let h = 5
-let retangulo = calcularAreaEPerimetro(b,h);
-function calcularAreaEPerimetro(base,altura) {
+let retangulo = calcularSalaRetangular(b,h);
+function calcularSalaRetangular(base,altura) {
   let area = base * altura;
   let perimetro = 2 * (base + altura);
   return {
@@ -42,7 +42,32 @@ function calcularAreaEPerimetro(base,altura) {
     'Perímetro': perimetro
   }
 }
-console.log(`Área do retângulo: ${retangulo['Área']}`);
-console.log(`Perímetro do retângulo: ${retangulo['Perímetro']}`);
+console.log(`Área da sala retangular: ${retangulo['Área']}`);
+console.log(`Perímetro da sala retangular: ${retangulo['Perímetro'].toFixed(2)}`);
 
 // 5.
+let raio = 10;
+const pi = 3.14;
+let circulo = calcularSalaCircular(raio);
+function calcularSalaCircular(raio) {
+  let area = pi * (raio * raio);
+  let perimetro = 2 * pi * raio;
+  return {
+    'Área': area,
+    'Perímetro': perimetro
+  }
+}
+console.log(`Área da sala circular: ${circulo['Área']}`);
+console.log(`Perímetro da sala circular: ${circulo['Perímetro'].toFixed(2)}`);
+
+// 6.
+let n = 8
+calcularTabuada(n);
+function calcularTabuada(numero) {
+  let multiplicador = 1
+  console.log(`TABUADA DO ${numero}:`)
+  while (multiplicador < 11) {
+    console.log(`${numero} * ${multiplicador} = ${numero * multiplicador}`)
+    multiplicador++
+  }
+}
