@@ -1,8 +1,11 @@
 function comprar() {
   let tipo = document.getElementById('tipo-ingresso').value;
   let quantidade = parseInt(document.getElementById('qtd').value);
-  console.log(`tipo: ${tipo} | qtde ${quantidade}`);
-  comprarIngresso(tipo, quantidade);
+  if (quantidade <= 0) {
+    alert(`Informe a quantidade correta.`)
+  } else {
+    comprarIngresso(tipo, quantidade);
+  }
 }
 
 function comprarIngresso(nome, qtde) {
